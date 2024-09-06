@@ -1,55 +1,53 @@
-import { Image, Text, TouchableOpacity, View } from "react-native";
-import { SafeAreaView } from "react-native-safe-area-context";
-
 import CustomButton from "@/components/CustomButton";
 import { onboarding } from "@/constants";
 import { OsName } from "@/types/enums";
-import * as Device from "expo-device";
 import { router } from "expo-router";
 import { useRef, useState } from "react";
+import { Image, Platform, Text, TouchableOpacity, View } from "react-native";
+import { SafeAreaView } from "react-native-safe-area-context";
 import Swiper from "react-native-swiper";
+
 const OnBoarding = () => {
   const swiperRef = useRef<Swiper>(null);
   const [activeIndex, setActiveIndex] = useState(0);
   const isLastSlide = activeIndex === onboarding.length - 1;
-  const osName = Device.osName;
 
   return (
-    <SafeAreaView className="flex h-full items-center justify-between bg-white">
+    <SafeAreaView className="flex justify-between items-center h-full bg-white">
       <TouchableOpacity
         onPress={() => {
           router.replace("/(auth)/sign-up");
         }}
-        className="w-full flex justify-end items-end p-5"
+        className="flex justify-end items-end p-5 w-full"
       >
-        <Text className="text-black text-md font-JakartaBold">Skip</Text>
+        <Text className="font-JakartaBold text-lg text-black">Skip</Text>
       </TouchableOpacity>
       <Swiper
         ref={swiperRef}
         loop={false}
         dot={
-          <View className="w-[32px] h-[4px] bg-[#E2E8F0] rounded-full mx-1" />
+          <View className="mx-1 w-[32px] h-[4px] bg-[#E2E8F0] rounded-full" />
         }
         activeDot={
-          <View className="w-[32px] h-[4px] bg-[#0286FF] mx-1 rounded-full" />
+          <View className="mx-1 w-[32px] h-[4px] bg-[#0286FF] rounded-full" />
         }
         onIndexChanged={(index) => {
           setActiveIndex(index);
         }}
       >
         {onboarding.map((item) => (
-          <View key={item.id} className="flex items-center justify-center p-5">
+          <View key={item.id} className="flex justify-center items-center p-5">
             <Image
               source={item.image}
               className="w-full h-[300px]"
               resizeMode="contain"
             />
-            <View className="flex flex-row items-center justify-center w-full mt-10">
-              <Text className="text-black text-3xl font-bold mx-10 text-center">
+            <View className="flex flex-row justify-center items-center mt-10 w-full">
+              <Text className="mx-10 text-3xl font-bold text-center text-black">
                 {item.title}
               </Text>
             </View>
-            <Text className="text-lg font-JakartaSemiBold text-center text-[#858585] mx-10 mt-3">
+            <Text className="mx-10 mt-3 font-JakartaSemiBold text-lg text-center text-[#858585]">
               {item.description}{" "}
             </Text>
           </View>
@@ -62,7 +60,7 @@ const OnBoarding = () => {
             ? router.replace("/(auth)/sign-up")
             : swiperRef.current?.scrollBy(1)
         }
-        className={`w-11/12 mt-10 ${osName === OsName.Android ? "mb-3" : ""}`}
+        className={`w-11/12 mt-10 ${Platform.OS === OsName.Android ? "mb-3" : ""}`}
       />
     </SafeAreaView>
   );
