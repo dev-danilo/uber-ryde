@@ -29,8 +29,11 @@ const SignIn = () => {
           <InputField
             label="Email"
             placeholder="Enter your email"
+            autoCapitalize="none"
             icon={icons.email}
             value={form.email}
+            textContentType="emailAddress"
+            keyboardType="email-address"
             onChangeText={(value) =>
               setForm({
                 ...form,
@@ -41,6 +44,7 @@ const SignIn = () => {
           <InputField
             label="Password"
             placeholder="Enter your password"
+            textContentType="password"
             icon={icons.lock}
             value={form.password}
             onChangeText={(value) =>
