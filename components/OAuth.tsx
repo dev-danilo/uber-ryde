@@ -1,9 +1,11 @@
 import { icons } from "@/constants";
-import { Image, Text, View } from "react-native";
+import { Alert, Image, Text, View } from "react-native";
 import CustomButton from "./CustomButton";
 
 const OAuth = () => {
-  const handleGoogleSignIn = async () => {};
+  const handleGoogleSignIn = async () => {
+    Alert.alert("Google Sign In is not yet implemented.");
+  };
   return (
     <View>
       <View className="flex flex-row gap-x-3 justify-center items-center mt-4">
