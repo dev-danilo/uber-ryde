@@ -2,7 +2,10 @@ import GoogleTextInput from "@/components/GoogleTextInput";
 import Map from "@/components/Map";
 import RideCard from "@/components/RideCard";
 import { icons, images } from "@/constants";
+import { useLocationStore } from "@/store";
 import { useUser } from "@clerk/clerk-expo";
+import * as Location from "expo-location";
+import { useEffect, useState } from "react";
 import {
   ActivityIndicator,
   FlatList,
@@ -121,13 +124,42 @@ const recentRiders = [
 ];
 
 const Home = () => {
+  const { setUserLocation, setDestinationLocation } = useLocationStore();
   const { user } = useUser();
   const loading = true;
 
-  const handleSignOut = () => {};
-  // console.log(JSON.stringify(user, null, 2));
+  const [hasPermissions, setHasPermissions] = useState(false);
 
-  const handleDestinationPress = () => {};
+  useEffect(() => {
+    const requestLocation = async () => {
+      let { status } = await Location.requestForegroundPermissionsAsync();
+
+      if (status !== "granted") {
+        setHasPermissions(false);
+        return;
+      }
+
+      let location = await Location.getCurrentPositionAsync();
+
+      const address = await Location.reverseGeocodeAsync({
+        latitude: location.coords?.latitude!,
+        longitude: location.coords?.longitude!,
+      });
+
+      setUserLocation({
+        // latitude: location.coords?.latitude,
+        // longitude: location.coords?.longitude,
+        latitude: 37.78825,
+        longitude: -122.4324,
+        address: `${address[0].name}, ${address[0].region}`,
+      });
+    };
+
+    requestLocation();
+  }, []);
+
+  const handleSignOut = () => { };
+  const handleDestinationPress = () => { };
 
   return (
     <SafeAreaView className="h-full bg-general-500">
