@@ -4,7 +4,8 @@ import RideLayout from "@/components/RideLayout";
 import { icons } from "@/constants";
 import { useLocationStore } from "@/store";
 import { router } from "expo-router";
-import { Text, View } from "react-native";
+import { useMemo } from "react";
+import { Image, Text, TouchableOpacity, View } from "react-native";
 
 const FindRide = () => {
   const {
@@ -13,12 +14,21 @@ const FindRide = () => {
     setDestinationLocation,
     setUserLocation,
   } = useLocationStore();
+  const snapPoints = useMemo(() => ["85%"], []);
 
   return (
-    <RideLayout title="Ride" snapPoints={["85%"]}>
-      {/* <Text className="text-2xl">You're here: {userAddress}</Text>
-      <Text className="text-2xl">You're going to: {destinationAddress}</Text> */}
-      {/* <Text className="text-2xl">Find Ride</Text> */}
+    <RideLayout title="Ride" snapPoints={snapPoints}>
+      <View className="absolute right-5">
+        <TouchableOpacity onPress={() => router.back()}>
+          <View className="justify-center items-center w-10 h-10 bg-slate-200 rounded-full">
+            <Image
+              source={icons.close}
+              resizeMode="contain"
+              className="w-6 h-6"
+            />
+          </View>
+        </TouchableOpacity>
+      </View>
       <View className="my-3">
         <Text className="mb-3 font-JakartaSemiBold text-lg">From</Text>
         <GoogleTextInput
@@ -42,7 +52,7 @@ const FindRide = () => {
       <CustomButton
         title="Find Now"
         onPress={() => router.push("/(root)/confirm-ride")}
-        className="mt-5"
+        className="mt-2"
       />
     </RideLayout>
   );

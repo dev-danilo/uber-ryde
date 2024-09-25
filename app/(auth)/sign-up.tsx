@@ -161,7 +161,7 @@ const SignUp = () => {
         >
           <View className="py-9 px-7 min-h-[300px] bg-white rounded-2xl">
             <Text className="mb-2 font-JakartaBold text-2xl">Verification</Text>
-            <Text className="mb-5 font-Jakarta ">
+            <Text className="mb-5 font-JakartaMedium">
               We've sent a verification code to {form.email}
             </Text>
             <InputField
@@ -196,7 +196,7 @@ const SignUp = () => {
             <Text className="font-JakartaBold text-3xl text-center">
               Verified
             </Text>
-            <Text className="mt-2 font-Jakarta text-base text-center text-gray-400">
+            <Text className="mt-2 font-JakartaMedium text-base text-center text-gray-400">
               You've successfully verified your account.
             </Text>
             <CustomButton

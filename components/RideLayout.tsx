@@ -5,6 +5,7 @@ import { useRef } from "react";
 import { Image, Text, TouchableOpacity, View } from "react-native";
 import { GestureHandlerRootView } from "react-native-gesture-handler";
 import Map from "./Map";
+
 const RideLayout = ({
   title,
   children,
