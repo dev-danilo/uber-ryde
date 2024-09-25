@@ -37,7 +37,6 @@ export async function POST(request: Request) {
     }
 
     const sql = neon(`${process.env.DATABASE_URL}`);
-
     const response = await sql`
         INSERT INTO rides ( 
           origin_address, 

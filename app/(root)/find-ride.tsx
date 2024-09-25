@@ -20,11 +20,11 @@ const FindRide = () => {
     <RideLayout title="Ride" snapPoints={snapPoints}>
       <View className="absolute right-5">
         <TouchableOpacity onPress={() => router.back()}>
-          <View className="justify-center items-center w-10 h-10 bg-slate-200 rounded-full">
+          <View className="justify-center items-center w-7 h-7 bg-slate-200 rounded-full">
             <Image
               source={icons.close}
               resizeMode="contain"
-              className="w-6 h-6"
+              className="w-4 h-4"
             />
           </View>
         </TouchableOpacity>
