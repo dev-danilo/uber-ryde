@@ -39,7 +39,7 @@ const DriverCard = ({ item, selected, setSelected }: DriverCardProps) => {
           </Text>
 
           <Text className="font-JakartaMedium text-sm text-general-800">
-            {formatTime(item.time!)}
+            {formatTime(parseInt(`${item.time}`!))}
           </Text>
 
           <Text className="mx-1 font-JakartaMedium text-sm text-general-800">

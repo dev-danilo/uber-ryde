@@ -1,11 +1,19 @@
 import { icons } from "@/constants";
-import { calculateRegion, generateMarkersFromData } from "@/lib/map";
+import { useFetch } from "@/lib/fetch";
+import {
+  calculateDriverTimes,
+  calculateRegion,
+  generateMarkersFromData,
+} from "@/lib/map";
 import { useDriverStore, useLocationStore } from "@/store";
-import { MarkerData } from "@/types/type";
+import { Driver, MarkerData } from "@/types/type";
 import { useEffect, useState } from "react";
+import { ActivityIndicator, Text, View } from "react-native";
 import MapView, { Marker, PROVIDER_DEFAULT } from "react-native-maps";
 
 const Map = () => {
+  const { data: drivers, loading, error } = useFetch<Driver[]>("/(api)/driver");
+
   const {
     userLongitude,
     userLatitude,
@@ -13,7 +21,7 @@ const Map = () => {
     destinationLongitude,
   } = useLocationStore();
 
-  const { selectedDriver, setDrivers, drivers } = useDriverStore();
+  const { selectedDriver, setDrivers } = useDriverStore();
   const [markers, setMarkers] = useState<MarkerData[]>([]);
 
   const region = calculateRegion({
@@ -24,7 +32,6 @@ const Map = () => {
   });
 
   useEffect(() => {
-    setDrivers(drivers);
     if (Array.isArray(drivers)) {
       if (!userLatitude || !userLongitude) return;
 
@@ -36,7 +43,35 @@ const Map = () => {
 
       setMarkers(newMarkers);
     }
-  }, [drivers]);
+  }, [drivers, userLatitude, userLongitude]);
+
+  useEffect(() => {
+    if (markers.length > 0 && destinationLatitude && destinationLongitude) {
+      calculateDriverTimes({
+        markers,
+        userLongitude,
+        userLatitude,
+        destinationLatitude,
+        destinationLongitude,
+      }).then((drivers) => {
+        setDrivers(drivers as MarkerData[]);
+      });
+    }
+  }, [markers, destinationLatitude, destinationLongitude]);
+
+  if (loading || !userLatitude || !userLongitude)
+    return (
+      <View className="flex justify-between items-center w-full">
+        <ActivityIndicator size="small" color="#000" />
+      </View>
+    );
+
+  if (error)
+    return (
+      <View className="flex justify-between items-center w-full">
+        <Text> Error: {error}</Text>
+      </View>
+    );
 
   return (
     <MapView
