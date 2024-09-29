@@ -5,7 +5,7 @@ import { icons, images } from "@/constants";
 import { useFetch } from "@/lib/fetch";
 import { useLocationStore } from "@/store";
 import { Ride } from "@/types/type";
-import { useUser } from "@clerk/clerk-expo";
+import { useAuth, useUser } from "@clerk/clerk-expo";
 import * as Location from "expo-location";
 import { router } from "expo-router";
 import { useEffect, useState } from "react";
@@ -22,6 +22,7 @@ import { SafeAreaView } from "react-native-safe-area-context";
 const Home = () => {
   const { setUserLocation, setDestinationLocation } = useLocationStore();
   const { user } = useUser();
+  const { signOut } = useAuth();
   const {
     data: recentRides,
     loading,
@@ -58,7 +59,11 @@ const Home = () => {
     requestLocation();
   }, []);
 
-  const handleSignOut = () => { };
+  const handleSignOut = () => {
+    signOut();
+
+    router.replace("/(auth)/sign-in");
+  };
   const handleDestinationPress = (location: {
     latitude: number;
     longitude: number;
