@@ -18,7 +18,7 @@
 ## :iphone: Mobile Application
 <!-- ![App Screenshot](https://github.com/dev-danilo/ordering-app/blob/main/mobile.gif) -->
 <p align="center">
-  <img alt="" src="https://github.com/dev-danilo/ordering-app/blob/main/mobile.gif" height="400" >
+  <img alt="" src="https://github.com/dev-danilo/uber-ryde/assets/mobile.gif" height="400" >
 </p>
 Screenshots about the application:
 <div style="display: flex;">
@@ -27,9 +27,25 @@ Screenshots about the application:
 <img alt="" src="https://res.cloudinary.com/danilopereira/image/upload/v1728521670/uber-ryde/onboarding/oykkbx1zmopxttfapzdv.png" height="400" >
 <img alt="" src="https://res.cloudinary.com/danilopereira/image/upload/v1728521670/uber-ryde/onboarding/xkdb3ccpsqwfv3gxi0t8.png" height="400" >
 
-<img alt="" src="https://res.cloudinary.com/danilopereira/image/upload/v1708198754/ordering-app/remove-product-cart.png" height="400" >
-<img alt="" src="https://res.cloudinary.com/danilopereira/image/upload/v1708198754/ordering-app/cart.png" height="400" >
-<img alt="" src="https://res.cloudinary.com/danilopereira/image/upload/v1708198754/ordering-app/order-whatsapp.png" height="400" >
+<img alt="" src="https://res.cloudinary.com/danilopereira/image/upload/v1728521876/uber-ryde/signin-and-signup/brtxuigmtwrbdwzza7mw.png" height="400" >
+<img alt="" src="https://res.cloudinary.com/danilopereira/image/upload/v1728521876/uber-ryde/signin-and-signup/ddzm9desi5kkxsxldt9f.png" height="400" >
+<img alt="" src="https://res.cloudinary.com/danilopereira/image/upload/v1728521876/uber-ryde/signin-and-signup/kxuxl2hy2ngryy2vzjgx.png" height="400" >
+
+
+<img alt="" src="https://res.cloudinary.com/danilopereira/image/upload/v1728522013/uber-ryde/lungw8bqowjtmknoz7bd.png" height="400" >
+<img alt="" src="https://res.cloudinary.com/danilopereira/image/upload/v1728522012/uber-ryde/zktrpin3nligt7yaijuv.png" height="400" >
+<img alt="" src="https://res.cloudinary.com/danilopereira/image/upload/v1728522011/uber-ryde/i4flfpc84924xxvaljp8.png" height="400" >
+<img alt="" src="https://res.cloudinary.com/danilopereira/image/upload/v1728522011/uber-ryde/qfzqrzheaa0kkvfs63wh.png" height="400" >
+<img alt="" src="https://res.cloudinary.com/danilopereira/image/upload/v1728522011/uber-ryde/y5dczys8c3y3bdszrusm.png" height="400" >
+<img alt="" src="https://res.cloudinary.com/danilopereira/image/upload/v1728522011/uber-ryde/rpks7xq3rtv9rnowdaes.png" height="400" >
+<img alt="" src="https://res.cloudinary.com/danilopereira/image/upload/v1728522010/uber-ryde/sqcblc9azy4omoobuu83.png" height="400" >
+<img alt="" src="https://res.cloudinary.com/danilopereira/image/upload/v1728522010/uber-ryde/n8tklgd3wkvqw9tfgu66.png" height="400" >
+<img alt="" src="https://res.cloudinary.com/danilopereira/image/upload/v1728522010/uber-ryde/yadzmbde9blshmmiai2b.png" height="400" >
+<img alt="" src="https://res.cloudinary.com/danilopereira/image/upload/v1728522010/uber-ryde/rzkvojmf11zcfhrlxiee.png" height="400" >
+<img alt="" src="https://res.cloudinary.com/danilopereira/image/upload/v1728522011/uber-ryde/y5dczys8c3y3bdszrusm.png" height="400" >
+<img alt="" src="https://res.cloudinary.com/danilopereira/image/upload/v1728522010/uber-ryde/agxcwgdhyekazv5o94ws.png" height="400" >
+<img alt="" src="https://res.cloudinary.com/danilopereira/image/upload/v1728522009/uber-ryde/urjckxerj7uxhoe4z0v8.png" height="400" >
+<img alt="" src="https://res.cloudinary.com/danilopereira/image/upload/v1728522009/uber-ryde/fjqfymfsi5h0xli089nh.png" height="400" >
 </p>
 </div>
 
