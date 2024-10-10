@@ -14,7 +14,7 @@ const FindRide = () => {
     setDestinationLocation,
     setUserLocation,
   } = useLocationStore();
-  const snapPoints = useMemo(() => ["85%"], []);
+  const snapPoints = useMemo(() => ["50%", "85%"], []);
 
   return (
     <RideLayout title="Ride" snapPoints={snapPoints}>

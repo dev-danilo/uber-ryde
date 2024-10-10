@@ -53,7 +53,9 @@ const Profile = () => {
 
             <InputField
               label="Phone"
-              placeholder={user?.primaryPhoneNumber?.phoneNumber || "Not Found"}
+              placeholder={
+                user?.primaryPhoneNumber?.phoneNumber || "(21) 95555-5555"
+              }
               containerStyle="w-full"
               inputStyle="p-3.5"
               editable={false}

@@ -15,7 +15,7 @@ const BookRide = () => {
   const { userAddress, destinationAddress } = useLocationStore();
   const { drivers, selectedDriver } = useDriverStore();
 
-  const snapPoints = useMemo(() => ["60%", "95%"], []);
+  const snapPoints = useMemo(() => ["60%", "80%"], []);
 
   const driverDetails = drivers?.filter(
     (driver) => +driver.id === selectedDriver,
