@@ -18,7 +18,7 @@
 ## :iphone: Mobile Application
 <!-- ![App Screenshot](https://github.com/dev-danilo/ordering-app/blob/main/mobile.gif) -->
 <p align="center">
-  <img alt="" src="https://github.com/dev-danilo/uber-ryde/blob/main/mobile.gif" height="400" >
+  <img alt="" src="https://github.com/dev-danilo/uber-ryde/blob/main/mobile.gif" height="700" >
 </p>
 Screenshots about the application:
 <div style="display: flex;">
